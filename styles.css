@@ -214,3 +214,28 @@ body.modal-open{overflow:hidden}
   .profile-card:hover,
   .profile-card:focus-visible{transform:translateY(-5px) scale(1.015)}
 }
+
+.hero-rocket img{
+  display:block;
+  width:100%;
+  max-height:none;
+  padding:9px 12px;
+  border-radius:10px;
+  background:#f8fafc;
+}
+
+.site-audio{
+  position:fixed;
+  right:16px;
+  bottom:max(16px, env(safe-area-inset-bottom));
+  z-index:20;
+  padding:10px 14px;
+  border:1px solid #469aff;
+  border-radius:999px;
+  background:#072f70;
+  color:white;
+  font:600 13px Arial,sans-serif;
+  cursor:pointer;
+}
+.site-audio:focus-visible{outline:2px solid white;outline-offset:3px}
+.site-audio[aria-pressed="true"]{background:#0751b5}

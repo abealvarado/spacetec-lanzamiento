@@ -112,3 +112,45 @@ profileModal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventLis
 document.addEventListener('keydown', event => {
   if(event.key === 'Escape' && profileModal.classList.contains('open')) closeProfile();
 });
+
+// The audio control enables the ambient loop and the team card sounds together.
+const audioButton = document.getElementById('site-audio');
+const ambientPad = document.getElementById('ambient-pad');
+const cardSound = new Audio('assets/perfil.mp3');
+ambientPad.volume = 0.36;
+cardSound.volume = 0.25;
+let lastCardSound = -Infinity;
+
+function updateAudioControl() {
+  const playing = !ambientPad.paused;
+  audioButton.setAttribute('aria-pressed', String(playing));
+  audioButton.textContent = playing ? 'Silenciar audio' : 'Activar audio';
+}
+
+audioButton.addEventListener('click', () => {
+  if (ambientPad.paused) {
+    ambientPad.play().catch(updateAudioControl);
+  } else {
+    ambientPad.pause();
+    cardSound.pause();
+  }
+});
+ambientPad.addEventListener('playing', updateAudioControl);
+ambientPad.addEventListener('pause', updateAudioControl);
+
+function playCardSound() {
+  const now = performance.now();
+  if (ambientPad.paused || now - lastCardSound < 130) return;
+  lastCardSound = now;
+  cardSound.currentTime = 0;
+  cardSound.play().catch(() => {});
+}
+
+document.querySelectorAll('.profile-card').forEach(card => {
+  card.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') playCardSound();
+  });
+  card.addEventListener('focus', () => {
+    if (card.matches(':focus-visible')) playCardSound();
+  });
+});
