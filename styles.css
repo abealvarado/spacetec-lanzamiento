@@ -3,3 +3,214 @@
 @media(max-width:720px){.container{width:min(calc(100% - 28px),var(--max))}.nav-shell{height:70px}.brand img{width:135px}.menu-btn{display:flex;flex-direction:column;gap:6px;padding:10px}.menu-btn span{display:block;width:25px;height:2px;background:white}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#081c37;padding:25px 20px;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(215,181,104,.3)}.nav-links.open{display:flex}.nav-cta{text-align:center}.hero,.hero-grid{min-height:auto}.hero-grid{padding:70px 0 50px}.hero h1{font-size:54px;letter-spacing:-3px}.hero-lead{font-size:16px}.hero-mark{padding-top:20px}.main-logo{width:290px}.countdown-section,.identity-section,.team-section{padding:75px 0}.countdown{display:grid;grid-template-columns:1fr 1fr;gap:10px}.separator{display:none}.time-card{width:auto}.time-card strong{font-size:46px}.identity-grid{gap:45px}.palette{flex-direction:column}.logo-card{min-height:150px}.team-grid{grid-template-columns:1fr 1fr}.photo-wrap{height:250px}.member:last-child{grid-column:1/-1}.member:last-child .photo-wrap{height:340px}.member h3{font-size:15px}.final-inner{flex-direction:column;text-align:center}.final-inner img{width:120px}.footer-inner{flex-direction:column;gap:18px;text-align:center}}
 @media(max-width:430px){.hero h1{font-size:47px}.team-grid{grid-template-columns:1fr}.member:last-child{grid-column:auto}.photo-wrap,.member:last-child .photo-wrap{height:390px}.section-heading h2,.identity-copy h2{font-size:38px}.time-card strong{font-size:40px}.identity-chips{gap:6px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+
+/* Rocket Tec remains visible after removing the old identity section */
+.hero-rocket{
+  margin-top:24px;
+  padding-top:18px;
+  width:min(285px,78%);
+  border-top:1px solid rgba(215,181,104,.35);
+  text-align:center;
+}
+.hero-rocket small{
+  display:block;
+  margin-bottom:7px;
+  color:var(--gold);
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:2.4px;
+}
+.hero-rocket img{
+  width:100%;
+  max-height:66px;
+  object-fit:contain;
+}
+
+/* Interactive team cards */
+.team-grid{align-items:stretch}
+.profile-card{
+  position:relative;
+  cursor:pointer;
+  outline:none;
+  border:1px solid transparent;
+  transform-origin:center;
+  will-change:transform,box-shadow;
+  transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,border-color .28s ease;
+}
+.profile-card:hover,
+.profile-card:focus-visible{
+  transform:translateY(-10px) scale(1.035);
+  z-index:4;
+  border-color:rgba(246,197,74,.8);
+  box-shadow:0 24px 52px rgba(0,0,0,.28);
+}
+.profile-card:focus-visible{box-shadow:0 0 0 3px rgba(246,197,74,.35),0 24px 52px rgba(0,0,0,.28)}
+.profile-card .photo-wrap img{transition:transform .35s ease}
+.profile-card:hover .photo-wrap img,
+.profile-card:focus-visible .photo-wrap img{transform:scale(1.025)}
+.profile-hint{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(8,28,55,.92);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.5px;
+  opacity:0;
+  transform:translateY(8px);
+  transition:.25s ease;
+  backdrop-filter:blur(8px);
+}
+.profile-hint b{color:var(--yellow);font-size:13px}
+.profile-card:hover .profile-hint,
+.profile-card:focus-visible .profile-hint{opacity:1;transform:none}
+
+/* Profile modal */
+body.modal-open{overflow:hidden}
+.profile-modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .22s ease,visibility .22s ease;
+}
+.profile-modal.open{visibility:visible;opacity:1}
+.profile-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(2,12,27,.78);
+  backdrop-filter:blur(10px);
+}
+.profile-dialog{
+  position:relative;
+  z-index:1;
+  width:min(920px,100%);
+  max-height:min(84vh,760px);
+  display:grid;
+  grid-template-columns:320px 1fr;
+  overflow:hidden;
+  border:1px solid rgba(215,181,104,.34);
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 35px 90px rgba(0,0,0,.45);
+  transform:translateY(18px) scale(.98);
+  transition:transform .25s ease;
+}
+.profile-modal.open .profile-dialog{transform:none}
+.profile-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  z-index:5;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(8,28,55,.12);
+  border-radius:50%;
+  background:rgba(255,255,255,.94);
+  color:var(--navy);
+  font-size:27px;
+  line-height:1;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.profile-close:hover{background:var(--yellow);transform:rotate(5deg)}
+.profile-dialog-photo{
+  position:relative;
+  min-height:520px;
+  background:#edf0f2;
+  overflow:hidden;
+}
+.profile-dialog-photo:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:34%;
+  background:linear-gradient(transparent,rgba(8,28,55,.35));
+  pointer-events:none;
+}
+.profile-dialog-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+.profile-dialog-photo span{
+  position:absolute;
+  z-index:2;
+  left:22px;
+  bottom:22px;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--yellow);
+  color:var(--navy);
+  font-size:12px;
+  font-weight:900;
+}
+.profile-dialog-content{
+  padding:52px 50px 42px;
+  overflow:auto;
+}
+.profile-kicker{
+  margin:0 0 12px;
+  color:var(--orange);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2.5px;
+}
+.profile-dialog h2{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(30px,4vw,48px);
+  line-height:1;
+  letter-spacing:-1.5px;
+}
+.profile-career{
+  margin:14px 0 0;
+  color:#5f6d80;
+  font-size:14px;
+  font-weight:700;
+}
+.profile-divider{
+  width:58px;
+  height:3px;
+  margin:25px 0;
+  background:var(--yellow);
+}
+.profile-bio p{
+  margin:0 0 15px;
+  color:#435167;
+  font-size:14px;
+  line-height:1.72;
+}
+.profile-bio p:last-child{margin-bottom:0}
+
+@media(max-width:720px){
+  .hero-rocket{width:240px}
+  .profile-hint{opacity:1;transform:none}
+  .profile-modal{padding:12px}
+  .profile-dialog{
+    grid-template-columns:1fr;
+    max-height:92vh;
+    overflow:auto;
+    border-radius:19px;
+  }
+  .profile-dialog-photo{min-height:300px;height:34vh}
+  .profile-dialog-content{padding:30px 24px 34px;overflow:visible}
+  .profile-close{top:12px;right:12px}
+  .profile-card:hover,
+  .profile-card:focus-visible{transform:translateY(-5px) scale(1.015)}
+}
