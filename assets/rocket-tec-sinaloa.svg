@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
+<title id="title">Rocket Tec Sinaloa</title><desc id="desc">Identificador gráfico para Rocket Tec Sinaloa</desc>
+<g fill="none" stroke="#F6C54A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M86 117c-15 15-22 34-24 52 18-2 37-9 52-24"/>
+<path d="M113 132c-22-22-35-50-33-78 29-2 56 11 78 33l12 12-45 45-12-12z" fill="#F6C54A" stroke="#F6C54A"/>
+<path d="M105 77c22-22 52-38 86-44-5 34-21 65-43 87" fill="#0A2344"/>
+<circle cx="143" cy="80" r="13" fill="#0A2344"/>
+<path d="M92 142 66 168M113 151l-13 25" stroke="#F16B2F"/>
+</g>
+<text x="225" y="91" fill="#FFFFFF" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="800" letter-spacing="2">ROCKET TEC</text>
+<text x="228" y="137" fill="#F6C54A" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" letter-spacing="8">SINALOA</text>
+</svg>

@@ -1,101 +1,117 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#14243B" />
-  <meta name="description" content="SPACE TEC — Proyecto final" />
-  <title>SPACE TEC | Proyecto Final</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0A2344">
+  <meta name="description" content="SPACE TEC — Equipo 01, Grupo 504. Proyecto final Rocket Tec Sinaloa.">
+  <title>SPACE TEC | Rocket Tec Sinaloa</title>
+  <link rel="icon" type="image/png" href="assets/space-tec-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="nav-wrap">
+  <header class="nav-shell">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="SPACE TEC, inicio"><img src="assets/logo-horizontal.png" alt="SPACE TEC" /></a>
-      <button class="menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
-      <div class="nav-links">
-        <a href="#proyecto">Proyecto</a><a href="#propuesta">Propuesta</a><a href="#resultados">Resultados</a><a href="#equipo">Equipo</a>
-        <a class="nav-cta" href="#entrega">Entrega final</a>
+      <a class="brand" href="#inicio" aria-label="SPACE TEC, inicio">
+        <img src="assets/space-tec-horizontal-white.png" alt="Logotipo horizontal SPACE TEC">
+      </a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#lanzamiento">Lanzamiento</a>
+        <a href="#identidad">Identidad</a>
+        <a href="#equipo">Equipo</a>
+        <a class="nav-cta" href="#equipo">Entrega final</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section id="inicio" class="hero">
+    <section class="hero" id="inicio">
       <div class="stars" aria-hidden="true"></div>
+      <div class="orbit orbit-a" aria-hidden="true"></div><div class="orbit orbit-b" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">PROYECTO FINAL · TEC</span>
-          <h1>Ideas que despegan.<br><span>Soluciones que avanzan.</span></h1>
-          <p>Somos <strong>SPACE TEC</strong>, un equipo que combina análisis, creatividad e ingeniería para convertir un reto en una solución clara, medible y funcional.</p>
-          <div class="actions"><a class="btn primary" href="#proyecto">Conoce el proyecto →</a><a class="btn ghost" href="#resultados">Ver resultados</a></div>
-          <div class="hero-meta"><div><b>01</b><span>Reto</span></div><div><b>02</b><span>Solución</span></div><div><b>03</b><span>Validación</span></div></div>
+          <p class="eyebrow"><span></span> PROYECTO FINAL · ROCKET TEC SINALOA</p>
+          <h1>Diseñamos.<br>Construimos.<br><em>Despegamos.</em></h1>
+          <p class="hero-lead">Somos <strong>SPACE TEC</strong>, un equipo de ingeniería del Tecnológico de Monterrey, Campus Sinaloa, preparado para llevar nuestro proyecto del diseño al lanzamiento.</p>
+          <div class="identity-chips" aria-label="Identificación del equipo">
+            <span>Equipo 01</span><span>Grupo 504</span><span>Campus Sinaloa</span>
+          </div>
+          <a class="primary-btn" href="#lanzamiento">Ver cuenta regresiva <b>↓</b></a>
         </div>
-        <div class="orbit-stage reveal delay">
-          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-          <div class="glow"></div><img src="assets/logo-principal.png" alt="Logotipo principal de SPACE TEC" class="hero-logo" />
+        <div class="hero-mark reveal delay-1">
+          <div class="planet-glow"></div>
+          <img class="main-logo" src="assets/space-tec-logo.png" alt="Logotipo principal de SPACE TEC">
+          <p>SPACE TEC</p><span>EQUIPO 01 · GRUPO 504</span>
         </div>
       </div>
-      <div class="scroll-note">SCROLL <span>↓</span></div>
     </section>
 
-    <section id="proyecto" class="section light">
+    <section class="countdown-section" id="lanzamiento">
       <div class="container">
-        <div class="section-head reveal"><span class="kicker">01 / EL RETO</span><h2>De un problema real a una meta concreta</h2><p>Este espacio está preparado para explicar el contexto de su proyecto final sin saturar la presentación. Reemplacen el texto por el planteamiento oficial del reto.</p></div>
-        <div class="cards three">
-          <article class="card reveal"><span class="card-num">01</span><h3>Contexto</h3><p>Describe brevemente la situación inicial y por qué vale la pena resolverla.</p></article>
-          <article class="card reveal"><span class="card-num">02</span><h3>Objetivo</h3><p>Define qué busca lograr SPACE TEC y cuál es el criterio principal de éxito.</p></article>
-          <article class="card reveal"><span class="card-num">03</span><h3>Restricciones</h3><p>Resume las condiciones técnicas, de tiempo, materiales o desempeño del proyecto.</p></article>
+        <div class="section-heading reveal">
+          <p class="eyebrow dark"><span></span> CUENTA REGRESIVA</p>
+          <h2>El lanzamiento se acerca.</h2>
+          <p>Miércoles 2 de diciembre de 2026 · 7:00 a. m. · Culiacán, Sinaloa (UTC−7)</p>
+        </div>
+        <div class="countdown reveal delay-1" role="timer" aria-live="polite" aria-label="Tiempo restante para el lanzamiento final">
+          <div class="time-card"><strong id="days">00</strong><span>Días</span></div>
+          <div class="separator">:</div>
+          <div class="time-card"><strong id="hours">00</strong><span>Horas</span></div>
+          <div class="separator">:</div>
+          <div class="time-card"><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div class="separator">:</div>
+          <div class="time-card"><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+        <p class="launch-status" id="launch-status">Tiempo restante para el lanzamiento final</p>
+      </div>
+    </section>
+
+    <section class="identity-section" id="identidad">
+      <div class="container identity-grid">
+        <div class="identity-copy reveal">
+          <p class="eyebrow"><span></span> IDENTIDAD DEL PROYECTO</p>
+          <h2>Dos identidades.<br><em>Una misión.</em></h2>
+          <p>La identidad de SPACE TEC combina azul espacial, dorado y naranja para comunicar tecnología, energía y movimiento. La presentación mantiene este sistema visual de forma consistente en computadora y celular.</p>
+          <div class="palette" aria-label="Paleta de colores SPACE TEC">
+            <div><i style="--swatch:#14243B"></i><span>Azul espacial<br><b>#14243B</b></span></div>
+            <div><i style="--swatch:#D7B568"></i><span>Dorado<br><b>#D7B568</b></span></div>
+            <div><i style="--swatch:#F16B2F"></i><span>Naranja<br><b>#F16B2F</b></span></div>
+          </div>
+        </div>
+        <div class="logo-panel reveal delay-1">
+          <div class="logo-card space-card"><small>NUESTRO EQUIPO</small><img src="assets/space-tec-horizontal.png" alt="Logotipo de SPACE TEC"></div>
+          <div class="logo-card rocket-card"><small>PROYECTO FINAL</small><img src="assets/rocket-tec-sinaloa.svg" alt="Identificador Rocket Tec Sinaloa"></div>
         </div>
       </div>
     </section>
 
-    <section id="propuesta" class="section dark diagonal">
-      <div class="container split">
-        <div class="section-head reveal"><span class="kicker gold">02 / NUESTRA PROPUESTA</span><h2>Diseñamos para que funcione, no solo para que se vea bien</h2><p>Aquí pueden presentar la solución final, sus decisiones de diseño y la lógica detrás del prototipo.</p><div class="tags"><span>Diseño</span><span>Ingeniería</span><span>Pruebas</span><span>Iteración</span></div></div>
-        <div class="process reveal">
-          <div class="step"><b>01</b><div><h3>Analizar</h3><p>Entender variables, necesidades y criterios del reto.</p></div></div>
-          <div class="step"><b>02</b><div><h3>Prototipar</h3><p>Convertir ideas en una propuesta que se pueda probar.</p></div></div>
-          <div class="step"><b>03</b><div><h3>Validar</h3><p>Medir el desempeño y ajustar con base en evidencia.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="resultados" class="section results">
+    <section class="team-section" id="equipo">
       <div class="container">
-        <div class="section-head reveal"><span class="kicker">03 / RESULTADOS</span><h2>La evidencia habla por el equipo</h2><p>Sustituyan estos indicadores por los datos finales que quieran destacar durante la presentación.</p></div>
-        <div class="metrics">
-          <div class="metric reveal"><strong data-count="100">0</strong><span>%<br>objetivo</span></div>
-          <div class="metric reveal"><strong data-count="3">0</strong><span>iteraciones<br>de diseño</span></div>
-          <div class="metric reveal"><strong data-count="1">0</strong><span>solución<br>final</span></div>
+        <div class="section-heading light reveal">
+          <p class="eyebrow"><span></span> EQUIPO 01 · GRUPO 504</p>
+          <h2>Personas detrás de <em>SPACE TEC.</em></h2>
+          <p>Cinco perfiles, distintas fortalezas y un mismo objetivo: convertir ideas en soluciones que puedan despegar.</p>
         </div>
-        <div class="evidence-grid">
-          <div class="evidence large reveal"><span>ESPACIO PARA EVIDENCIA</span><h3>Prototipo final</h3><p>Inserten aquí una fotografía, render o captura principal del proyecto.</p></div>
-          <div class="evidence reveal"><span>DATO CLAVE</span><h3>Prueba 01</h3><p>Resultado breve y medible.</p></div>
-          <div class="evidence reveal"><span>DATO CLAVE</span><h3>Prueba 02</h3><p>Resultado breve y medible.</p></div>
+        <div class="team-grid">
+          <article class="member reveal"><div class="photo-wrap"><img src="assets/team/author-000.jpg" alt="Marco Francisco Martinez Diarte" loading="lazy"><span>01</span></div><div class="member-body"><h3>Marco Francisco<br>Martinez Diarte</h3><p>Ingeniería en Nanotecnología y Materiales</p></div></article>
+          <article class="member reveal delay-1"><div class="photo-wrap"><img src="assets/team/author-001.jpg" alt="Sofía Mendoza Lagunas" loading="lazy"><span>02</span></div><div class="member-body"><h3>Sofía Mendoza<br>Lagunas</h3><p>Ingeniería · enfoque Industrial</p></div></article>
+          <article class="member reveal delay-2"><div class="photo-wrap"><img src="assets/team/author-002.jpg" alt="Maria Fernanda Ruiz Garcia" loading="lazy"><span>03</span></div><div class="member-body"><h3>Maria Fernanda<br>Ruiz Garcia</h3><p>Ingeniería Industrial y de Sistemas</p></div></article>
+          <article class="member reveal"><div class="photo-wrap"><img src="assets/team/author-003.jpg" alt="Christopher David Ramírez García" loading="lazy"><span>04</span></div><div class="member-body"><h3>Christopher David<br>Ramírez García</h3><p>Ingeniería Industrial</p></div></article>
+          <article class="member reveal delay-1"><div class="photo-wrap"><img src="assets/team/author-004.jpg" alt="Abraham Jaim Alvarado Estrada" loading="lazy"><span>05</span></div><div class="member-body"><h3>Abraham Jaim<br>Alvarado Estrada</h3><p>Ingeniería Industrial y de Sistemas</p></div></article>
         </div>
       </div>
     </section>
 
-    <section id="equipo" class="section light">
-      <div class="container split team-intro">
-        <div class="section-head reveal"><span class="kicker">04 / SPACE TEC</span><h2>Un equipo, una misión</h2><p>Agreguen aquí los integrantes y su aportación principal. La estructura está lista para crecer sin romper el diseño.</p></div>
-        <div class="team-card reveal"><img src="assets/logo-principal.png" alt="SPACE TEC"/><div><span>EQUIPO</span><h3>SPACE TEC</h3><p>Creatividad · Ingeniería · Ejecución</p></div></div>
+    <section class="final-banner">
+      <div class="container final-inner reveal">
+        <img src="assets/space-tec-logo.png" alt="SPACE TEC">
+        <div><p>02 · 12 · 2026</p><h2>Nos vemos en el lanzamiento.</h2><span>7:00 a. m. · Culiacán, Sinaloa</span></div>
       </div>
-      <div class="container members">
-        <article class="member reveal"><div class="avatar">01</div><h3>Integrante 01</h3><p>Rol / responsabilidad</p></article>
-        <article class="member reveal"><div class="avatar">02</div><h3>Integrante 02</h3><p>Rol / responsabilidad</p></article>
-        <article class="member reveal"><div class="avatar">03</div><h3>Integrante 03</h3><p>Rol / responsabilidad</p></article>
-        <article class="member reveal"><div class="avatar">04</div><h3>Integrante 04</h3><p>Rol / responsabilidad</p></article>
-      </div>
-    </section>
-
-    <section id="entrega" class="final-cta">
-      <div class="container reveal"><img src="assets/logo-horizontal.png" alt="SPACE TEC"/><h2>Listos para despegar.</h2><p>Proyecto final · SPACE TEC</p><a href="#inicio" class="btn primary">Volver al inicio ↑</a></div>
     </section>
   </main>
 
-  <footer><div class="container"><span>© SPACE TEC</span><span>Proyecto académico · 2026</span></div></footer>
-  <script src="script.js"></script>
+  <footer><div class="container footer-inner"><img src="assets/space-tec-horizontal-white.png" alt="SPACE TEC"><p>Equipo 01 · Grupo 504 · Proyecto final 2026</p><a href="#inicio">Volver arriba ↑</a></div></footer>
 </body>
 </html>
